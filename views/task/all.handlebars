@@ -1,0 +1,59 @@
+<h1 class="tituliLista">Lista de tarefas</h1>
+
+<div class="container">
+    <div id="botaolistar">
+        <a href="/task/add">
+            <button onclick="" type="button" class="btn btn-primary btn-lg">Adicionar tarefa<i
+                    style="padding-left: 20px" class="fa-solid fa-plus"></i></button>
+        </a>
+    </div>
+    <div id="button2" class="list-group">
+        {{#each tasks}}
+            <div class="list-group-item list-group-item-action" aria-current="true">
+                <div class="d-flex w-100 justify-content-between">
+                    {{#if this.done}}
+                        <h5 id="botaolistar" class="mb-1">{{this.title}} conluída</h5>
+                    {{else}}
+                        <h5 class="mb-1">{{this.title}}</h5>
+                    {{/if}}
+                    <p style="float: right">
+
+                        <form action="/task/updatestatus" method="post">
+
+                            <input type="hidden" name="id" value={{this.id}}>
+                            <input type="hidden" name="done" value={{this.done}}>
+
+                            <button id="button" type="submit" class="btn btn-info" data-toggle="tooltip"
+                                    data-placement="bottom" title="Concluir/Ativar"><i
+                                    class="fa-solid fa-check"></i>
+                            </button>
+
+                        </form>
+
+                        <a href="/task/edit/{{this.id}}">
+
+                            <button id="button" type="submit" class="btn btn-primary" data-toggle="tooltip"
+                                    data-placement="bottom" title="Editar"><i
+                                    class="fa fa-edit"></i>
+                            </button>
+                        </a>
+                        <form action="/task/remove" method="post">
+                            <input type="hidden" name="id" value={{this.id}}>
+                            <button id="button" type="submit" class="btn btn-danger" data-toggle="tooltip"
+                                    data-placement="bottom" title="Apagar"><i class="fa fa-trash"></i>
+                            </button>
+                        </form>
+
+                    </p>
+
+                </div>
+                {{#if this.done}}
+                    <p id="botaolistar" class="mb-1">{{this.description}}</p>
+                {{else}}
+                    <p class="mb-1">{{this.description}}</p>
+                {{/if}}
+            </div>
+        {{/each}}
+    </div>
+</div>
+

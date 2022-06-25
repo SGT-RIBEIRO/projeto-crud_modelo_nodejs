@@ -1,0 +1,32 @@
+.container {
+    padding-top: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.container-md {
+    text-align: center;
+}
+
+.tituliLista {
+    text-align: center;
+    padding: 30px;
+}
+
+#botaolistar {
+    text-decoration: line-through;
+    color: #ccc;
+    padding-bottom: 20px;
+
+}
+
+.user {
+    float: left;
+}
+
+#button {
+    display: block;
+    float: right;
+    position: relative;
+    margin-left: 100px;
+}

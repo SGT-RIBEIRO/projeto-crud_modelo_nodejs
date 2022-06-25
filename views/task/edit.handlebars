@@ -1,0 +1,18 @@
+<h1 style="text-align: center; padding: 30px">Editando a tarefa {{task.title}}</h1>
+
+<div style="padding-right: 150px; padding-left: 150px">
+    <div class="mb-3">
+        <form method="post" action="/task/edit">
+            <input type="hidden" name="id" value="{{task.id}}">
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Titulo</label>
+                <input type="text" name="title" class="form-control" id="exampleFormControlInput1" placeholder="Titulo da tarefa" value="{{task.title}}">
+                <label for="exampleFormControlInput1" class="form-label">Descrição</label>
+                <input type="text" name="description" class="form-control" id="exampleFormControlInput1" placeholder="Descrição" value="{{task.description}}">
+                <div style="padding-top: 30px" class="d-grid gap-2 col-6 mx-auto">
+                    <button class="btn btn-primary" type="submit">Alterar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
